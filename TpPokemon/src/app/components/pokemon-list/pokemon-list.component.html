@@ -1,0 +1,49 @@
+
+<form class="d-flex">
+  <div class="input-group">
+      <input type="text" [(ngModel)]="searchText" autocomplete="on" class="form-control" placeholder="Search">
+      <button type="button" class="btn btn-secondary"><i class="bi-search"></i></button>
+  </div>
+</form>
+<app-favorite-list></app-favorite-list>
+
+
+
+<table class="table table-striped">
+    <thead class="dark">
+      <tr>
+        <th scope="col">#</th>
+        <th scope="col">Nom</th>
+        <th scope="col">Url</th>
+       <th>Action</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let pokemon of pokemons">
+        <td>
+            {{ pokemon.id}}
+        
+        </td>
+        <td>
+            {{ pokemon.name }}
+        
+        </td>
+
+        <td>
+            {{ pokemon.url }}
+        </td>
+
+        <td><button class="btn btn-primary" (click)="addToFavorites(pokemon)">Ajouter aux favoris</button></td>
+       
+      </tr>
+    </tbody>
+  </table>
+
+
+ 
+
+
+  
+  
+
+  
